@@ -1,4 +1,4 @@
-# YouTube viewcount tracker
+# YouTube viewercount tracker
 Get the current livestream viewer count and save it in a postgresql database along with the URL and time
 
 (also my first time working with databases... absolute hell. what am i doing what am i doing)
