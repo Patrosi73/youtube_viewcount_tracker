@@ -12,7 +12,7 @@ postgres_host=os.getenv("POSTGRES_HOST")
 postgres_port=os.getenv("POSTGRES_PORT")
 
 def get_count(url):
-    viewercount = subprocess.check_output(['yt-dlp', f"--print", f"concurrent_viewers", url])
+    viewercount = subprocess.check_output(['yt-dlp', f"--print", f"concurrent_view_count", url])
     viewercount = viewercount.decode('utf-8').partition('\n')[0]
     return viewercount
 def import_to_database(viewercount, url):
@@ -25,7 +25,7 @@ def import_to_database(viewercount, url):
         cur.close()
         conn.close()
     else:
-        print(f"Invalid viewer count retrieved: {viewercount}")
+        print(f"invalid viewer count retrieved: {viewercount}")
 
 def main(url):
     if not url:
