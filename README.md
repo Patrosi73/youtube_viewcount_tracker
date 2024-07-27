@@ -9,6 +9,7 @@ Get the current livestream viewer count and save it in a postgresql database alo
 - [postgresql server](https://www.postgresql.org/download/) already set up
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) in PATH
 - [Python](https://www.python.org/downloads/) in PATH
+- `psycopg2` and `python-dotenv` installed via pip
 
 # Setup
 > [!NOTE]
