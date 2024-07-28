@@ -19,9 +19,6 @@ Get the current livestream viewer count and save it in a postgresql database alo
 2. Make sure you're connected to a database, copy the command in the .sql file and paste it in
 3. Rename `.env.example` to `.env` and enter your postgresql information
 4. Run `python track.py` appended with a valid YouTube Live URL
-> [!NOTE]
-> Make sure the stream is live and is not in a "waiting" state.
-> [yt-dlp was supposed to capture data in that state anyway](https://github.com/yt-dlp/yt-dlp/pull/5152#:~:text=for%20youtube%2C%20this%20also%20applies%20to%20upcoming%20streams%2Fpremieres%20where%20they%20have%20the%20%22waiting%22%20count.), but it errors out.. don't know why.
 5. If completed successfully you should have an entry in the newly created `viewers` table.
 
 # Automation
