@@ -32,7 +32,7 @@ def main(url):
         print("video URL is not provided")
         return
     viewercount = get_count(url)
-    if viewercount is not None:
+    if viewercount is not "NA":
         import_to_database(viewercount, url)
     else:
         print("failed to retrieve view count")
