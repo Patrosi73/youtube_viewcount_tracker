@@ -22,7 +22,7 @@ def import_to_database(viewercount, video_id):
         viewercount = int(viewercount)
         conn = psycopg2.connect(dbname=postgres_dbname, user=postgres_username, password=postgres_passwd, host=postgres_host, port=postgres_port)
         cur = conn.cursor()
-        cur.execute(f"INSERT INTO {video_id} (viewercount, videoid, time) VALUES (%s, %s, %s)", (viewercount, video_id, datetime.datetime.now()))
+        cur.execute(f"INSERT INTO viewers (viewercount, videoid, time) VALUES (%s, %s, %s)", (viewercount, video_id, datetime.datetime.now()))
         conn.commit()
         cur.close()
         conn.close()
@@ -59,7 +59,7 @@ def main(url):
     viewercount = get_count(url)
     video_id = get_video_id(url)
     if viewercount != "NA":
-        create_table(video_id)
+        #create_table(video_id)
         import_to_database(viewercount, video_id)
     else:
         print("failed to retrieve view count")
